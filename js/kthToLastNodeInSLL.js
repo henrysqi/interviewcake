@@ -15,3 +15,19 @@ c.next = d;
 d.next = e;
 
 kthToLastNode(2, a);
+
+function kthToLastNode(k, headNode) {
+    let nodeVals = []
+    let currentNode = headNode
+    let counter = 0
+    while(true) {
+        if (currentNode.next) {
+            nodeVals[counter] = currentNode.value
+            currentNode = currentNode.next
+            counter++
+        } else {
+            break;
+        }
+    }
+    return nodeVals[counter - k + 1]
+}
